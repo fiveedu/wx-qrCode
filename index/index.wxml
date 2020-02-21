@@ -1,0 +1,20 @@
+<view>
+  <canvas canvas-id="myCanvas" style='width:{{ercode_canvasWidth}}px;height:{{ercode_canvasHeight}}px;left: -300rpx'></canvas>
+  <button bindtap="showQrcode">分享</button>
+  <view wx:if="{{modalDisplay}}" class="mask">
+    <view class="modal-container">
+      <view class="modal-close">
+        <text bindtap="closeRejectModal">✕</text>
+      </view>
+      <view class="modal-text">
+        <view class="canvas-box">
+          <image src="{{qrCodeImgs}}" style='display:block;width:{{canvasWidth}}px;height:{{canvasHeight}}px;margin:{{canvasWidth_y}}px auto 0 auto;box-shadow:0px 7px 20px 4px rgba(143,143,143,0.29);'></image>
+        </view>
+      </view>
+      <view class="modal-button">
+        <text>保存图片到本地相册，分享给好友</text>
+        <button class="but" bindtap="savePic">保存图片</button>
+      </view>
+    </view>
+  </view>
+</view>
